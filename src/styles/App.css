@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../images/Background.jpg");
+}
+
+/* header */
+
+.header{
+    background: rgba(140, 263, 230, 0.75);
+    height: 150px;
+    box-shadow: 0 2px 5px #03dac6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__content{
+    width: 600px;
+    justify-content: space-around;
+    display: flex;
+}
+
+/* header content */
+
+.exchange__rates{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.exchange__blocks{
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: #018786;
+    border: 2px solid #018786;
+    border-radius: 100px;
+    background: #ffffff;
+    box-shadow: 0 0 20px #018786;
+}
+
+.exchange__p{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* main */
+
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.exchange{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 250px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 10px;
+    border: 3px solid #03dac6;
+    box-shadow: 0 0 15px #03dac6;
+}
+
+.exchange:hover{
+    background: rgba(0, 0, 0, .8);
+    transition-duration: 0.5s;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.exchange:hover .exchange__p{
+    color: #ffffff;
+    transition-timing-function: ease;
+    transition-duration: 0.8s;
+}
+
+.exchange__content{
+    display: flex;
+    flex-direction: column;
+}
+
+.exchange__2{
+    margin-left: 15px;
+}
+
+.afterInput{
+    display: flex;
+    margin-top: 20px;
+}
+
+.get__result{
+    display: flex;
+    margin-top: 30px;
+}
+
+.exchange__result{
+    border: 2px solid #018786;
+    border-radius: 10px;
+    padding: 5px 8px;
+    background: #ffffff;
+}
+
+.exchange__result__content{
+    height: 20px;
+    min-width: 100px;
+}
+
+/* UI loading */
+
+.loading{
+    width: 50px;
+    height: 50px;
+    border: 2px ;
+}
+
+/* UI button */
+
+.btn{
+    color: #018786;
+    font-weight: 900;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 2px solid #018786;
+    border-radius: 15px;
+}
+.btn:hover{
+    background: #018786;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+/* select */
+
+.select__currency{
+    width: 75px;
+    border: 2px solid #018786;
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+/* media requests */
+
+@media (max-width: 767px) {
+    .header__content{
+        width: auto;
+    }
+    .exchange{
+        width: 400px;
+    }
+}
+
+@media (max-width: 490px) {
+    .exchange__rates{
+        width: 320px;
+    }
+}
+
+@media (max-width: 425px) {
+    .header{
+        height: 100px;
+    }
+    .exchange{
+        width: 300px;
+    }
+    .exchange__blocks{
+        padding: 15px 18px;
+    }
+}
+@media (max-width: 375px) {
+    .exchange{
+        width: 240px;
+    }
+    .exchange__rates{
+        width: 270px;
+    }
+    .exchange__blocks{
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
