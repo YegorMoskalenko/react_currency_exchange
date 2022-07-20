@@ -14,14 +14,17 @@ const Exchange = ({result, setResult, requestOptions}) => {
     const [currency2, setCurrency2] = useState('')
     const [loading, setLoading] = useState(null)
 
-    const getResult = () => {
+    const getResult = async () => {
         setLoading(loading => loading = true)
         if(currency1 !== '' || currency2 !== '' || amount > 0){
-            fetch(`https://api.apilayer.com/fixer/convert?to=${currency2}&from=${currency1}&amount=${amount}`, requestOptions)
-                .then(responseJson => responseJson.json())
-                .then(response => setResult(result => result = response.result))
-                .then(() => setLoading(loading => loading = false))
-                .catch(e => console.log('Error-1', e))
+            try {
+                const responseJson = await fetch(`https://api.apilayer.com/fixer/convert?to=${currency2}&from=${currency1}&amount=${amount}`, requestOptions)
+                const response = await responseJson.json()
+                await setResult(result => result = response.result)
+                setLoading(loading => loading = false)
+            } catch (e){
+                console.log('Error-1', e)
+            }
         } else {
             console.error('Fields cannot be empty')
         }
