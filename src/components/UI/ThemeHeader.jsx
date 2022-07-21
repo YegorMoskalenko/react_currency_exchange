@@ -10,7 +10,7 @@ const ThemeHeader = ({uahToCurrency}) => {
                         : <div className='exchange__rate__2 exchange__blocks'>{uahToCurrency.USD} - UAH/USD</div>
                     }
                     {uahToCurrency.EUR === 0
-                        ? <div style={{display: 'flex'}} className='exchange__rate__1 exchange__blocks'><Loader /><div style={{marginLeft: '15px'}}>UAH/USD</div></div>
+                        ? <div style={{display: 'flex'}} className='exchange__rate__1 exchange__blocks'><Loader /><div style={{marginLeft: '15px'}}>UAH/EUR</div></div>
                         : <div className='exchange__rate__2 exchange__blocks'>{uahToCurrency.EUR} - UAH/EUR</div>
                     }
                 </div>
